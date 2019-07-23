@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
-import Index from './pages/index'
+import 'taro-ui/dist/style/index.scss'
 
+import Index from './pages/index'
 import './app.styl'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -13,13 +14,31 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index'
+      'pages/index/index',
+      'pages/profile/index'
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      color: "#626567",
+      selectedColor: "#2A8CE5",
+      backgroundColor: "#FBFBFB",
+      borderStyle: "white",
+      list: [{
+        pagePath: "pages/index/index",
+        text: "首页",
+        iconPath: "./assets/images/index.png",
+        selectedIconPath: "./assets/images/index_selected.png"
+      }, {
+        pagePath: "pages/profile/index",
+        text: "我的",
+        iconPath: "./assets/images/user.png",
+        selectedIconPath: "./assets/images/user_selected.png"
+      }]
     }
   }
 
