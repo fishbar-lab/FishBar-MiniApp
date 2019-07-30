@@ -17,6 +17,15 @@ export default class Card extends Component {
 
   componentDidHide () { }
 
+  onGoDetailsPage () {
+    const id = this.props.topicId
+    if (id) {
+      Taro.navigateTo({
+        url: `/pages/details/index?id=${id}`
+      })
+    }
+  }
+
   render () {
     return (
       <View className='card'>
@@ -24,7 +33,7 @@ export default class Card extends Component {
           <AtAvatar size='small' image={this.props.avatar} circle/>
           <View className='at-col username'>{this.props.username}</View>
         </View>
-        <View className='content'>
+        <View className='content' onClick={this.onGoDetailsPage.bind(this, 'card')}>
           {this.props.content}
         </View>
         <View className='action at-row at-row__align--center'>

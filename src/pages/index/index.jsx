@@ -51,7 +51,7 @@ export default class Index extends Component {
   fetchTopicList = (type = '') => {
     this.setState({ loading: true })
     Taro.request({
-      url: `https://cnodejs.org/api/v1/topics?tab=${type}`,
+      url: `https://cnodejs.org/api/v1/topics?tab=${type}&limit=10`,
       header: {
         'content-type': 'application/json'
       }
@@ -62,9 +62,9 @@ export default class Index extends Component {
         cards: {
           ...this.state.cards,
           [type]: topics
-        }
+        },
+        loading: false
       })
-      this.setState({ loading: false })
     })
   }
 
@@ -105,6 +105,7 @@ export default class Index extends Component {
                       return (
                         <Card
                           key={card.id}
+                          topicId={card.id}
                           username={card.author.loginname}
                           avatar={card.author.avatar_url}
                           content={card.title}
