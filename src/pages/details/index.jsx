@@ -3,6 +3,8 @@ import { View, RichText } from '@tarojs/components'
 import { AtCard, AtTabBar } from 'taro-ui'
 import './index.styl'
 
+import WxParse from '../../components/wxParse/wxParse'
+
 export default class Index extends Component {
 
   config = {
@@ -53,6 +55,8 @@ export default class Index extends Component {
           topicDetail: topic,
           loading: false
         })
+        // const article = topic.content
+        // WxParse.wxParse('article', 'html', article, this.$scope, 5)
       })
     }
   }
@@ -65,7 +69,11 @@ export default class Index extends Component {
           note={this.state.topicDetail.create_at}
           title={this.state.topicDetail.title}
         >
-          <RichText nodes={this.state.topicDetail.content}/>
+          <RichText nodes={this.state.topicDetail.content} class="rich-text"/>
+          {/* <View>
+            <import src='../../components/wxParse/wxParse.wxml'/>
+            <template is='wxParse' data='{{wxParseData: article.nodes}}'/>
+          </View> */}
         </AtCard>
         <AtTabBar
           fixed
