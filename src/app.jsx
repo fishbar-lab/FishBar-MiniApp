@@ -32,8 +32,8 @@ class App extends Component {
       list: [{
         pagePath: "pages/index/index",
         text: "首页",
-        iconPath: "./assets/images/index.png",
-        selectedIconPath: "./assets/images/index_selected.png"
+        iconPath: "./assets/images/home.png",
+        selectedIconPath: "./assets/images/home_selected.png"
       }, {
         pagePath: "pages/profile/index",
         text: "我的",
