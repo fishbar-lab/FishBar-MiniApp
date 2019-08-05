@@ -11,7 +11,7 @@ import arrow from '../../assets/images/arrow.jpg'
 export default class Index extends Component {
 
   config = {
-    navigationBarTitleText: '我的',
+    navigationBarTitleText: '我的'
   }
 
   constructor() {
@@ -32,9 +32,7 @@ export default class Index extends Component {
   componentDidHide() { }
 
   onChange(value) {
-    this.setState({
-      value: value
-    })
+    this.setState({ value: value })
   }
 
   render() {
@@ -42,7 +40,10 @@ export default class Index extends Component {
       <View className='at-col'>
         <View className='at-row top'>
           <View className='at-col at-col-3 top-height'>
-            <AtAvatar circle image='https://pic.qqtn.com/up/2019-4/2019040917510740548.jpg' className='avatar'></AtAvatar>
+            <AtAvatar
+              circle
+              image='https://pic.qqtn.com/up/2019-4/2019040917510740548.jpg'
+              className='avatar'></AtAvatar>
           </View>
           <View className='at-col at-col-6'>
             <span id='username'>云深不知处</span>
@@ -54,19 +55,22 @@ export default class Index extends Component {
         <View className='at-row center'>
           <ul>
             <li>
-              <img src={myPost} className='icon'></img>
-              <span className='myspan'>我的帖子</span>
-              <a href='#' className='arrow'></a>
+              <a href='#' className='arrow'>
+                <img src={myPost} className='icon'></img>
+                <span className='myspan'>我的帖子</span>
+              </a>
             </li>
             <li>
-              <img src={collection} className='icon'></img>
-              <span className='myspan'>我的收藏</span>
-              <a href='#' className='arrow'></a>
+              <a href='#' className='arrow'>
+                <img src={collection} className='icon'></img>
+                <span className='myspan'>我的收藏</span>
+              </a>
             </li>
             <li>
-              <img src={complaints} className='icon'></img>
-              <span className='myspan'>投诉反馈</span>
-              <a href='#' className='arrow'></a>
+              <a href='#' className='arrow'>
+                <img src={complaints} className='icon'></img>
+                <span className='myspan'>投诉反馈</span>
+              </a>
             </li>
           </ul>
         </View>
