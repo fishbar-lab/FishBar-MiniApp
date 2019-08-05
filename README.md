@@ -15,8 +15,52 @@ npm install
 
 ## Usage
 
+- 微信小程序
+
 ```sh
 npm run dev:weapp
+```
+
+- H5
+
+```sh
+npm run dev:h5
+```
+
+- 支付宝小程序
+
+```sh
+npm run dev:alipay
+```
+
+- 百度小程序
+
+```sh
+npm run dev:swan
+```
+
+- 快应用
+
+```sh
+npm run dev:quickapp
+```
+
+- ReactNative小程序
+
+```sh
+npm run dev:rn
+```
+
+- QQ轻应用
+
+```sh
+npm run dev:qq
+```
+
+- 字节跳动小程序
+
+```sh
+npm run dev:tt
 ```
 
 ## Author
@@ -24,6 +68,7 @@ npm run dev:weapp
 👤 **vinli**
 
 * Github: [@cnblackj](https://github.com/cnblackj)
+* Github: [@shadow88sky](https://github.com/shadow88sky)
 
 ## 🤝 Contributing
 
