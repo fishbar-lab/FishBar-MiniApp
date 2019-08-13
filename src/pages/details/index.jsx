@@ -3,7 +3,8 @@ import { View, RichText } from '@tarojs/components'
 import { AtCard, AtTabBar } from 'taro-ui'
 import './index.styl'
 
-import WxParse from '../../components/wxParse/wxParse'
+import Tabbar from '../../components/tabbar'
+import Comment from '../../components/comment'
 
 export default class Index extends Component {
 
@@ -75,16 +76,16 @@ export default class Index extends Component {
             <template is='wxParse' data='{{wxParseData: article.nodes}}'/>
           </View> */}
         </AtCard>
-        <AtTabBar
-          fixed
-          tabList={[
-            { title: '赞同', iconType: 'heart' },
-            { title: '收藏', iconType: 'star' },
-            { title: '评论', iconType: 'message' }
-          ]}
-          onClick={this.handleClick.bind(this)}
-          current={this.state.currentTab}
-        />
+        <View className='comment-group'>
+          {
+            this.state.topicDetail.replies.map(reply => {
+              return (
+                <Comment reply={reply}/>
+              )
+            })
+          }
+        </View>
+        <Tabbar />
       </View>
     )
   }
