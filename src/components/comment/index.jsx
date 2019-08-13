@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, RichText } from '@tarojs/components'
 import 'taro-ui/dist/style/components/flex.scss'
 import './index.styl'
 
@@ -19,17 +19,15 @@ export default class Card extends Component {
 
   render () {
     return (
-      <View className='comment-item at-row'>
-        <View className='at-col'>
-          avatar
-        </View>
-        <View className='at-col'>
+      <View className='comment-item'>
+        <View className='userinfo'>
+          <AtAvatar size='small' image={this.props.reply.author.avatar_url} circle/>
           <View className='username'>
-            username
+            {this.props.reply.author.loginname}
           </View>
-          <View className='comment'>
-            comment content
-          </View>
+        </View>
+        <View className='comment'>
+          <RichText nodes={this.props.reply.content} class="rich-text"/>
         </View>
       </View>
     )

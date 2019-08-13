@@ -76,7 +76,15 @@ export default class Index extends Component {
             <template is='wxParse' data='{{wxParseData: article.nodes}}'/>
           </View> */}
         </AtCard>
-        <Comment />
+        <View className='comment-group'>
+          {
+            this.state.topicDetail.replies.map(reply => {
+              return (
+                <Comment reply={reply}/>
+              )
+            })
+          }
+        </View>
         <Tabbar />
       </View>
     )
